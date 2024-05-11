@@ -47,13 +47,13 @@ fun LazyApp(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
 
-) {
+    ) {
     val titleState = remember { mutableStateOf("MonitorMania App") }
     val isBackEnabled = remember {
         mutableStateOf(false)
     }
 
-    fun setBackIcon(icon: ImageVector){
+    fun setBackIcon(icon: ImageVector) {
         isBackEnabled.value = true
     }
 
@@ -63,28 +63,30 @@ fun LazyApp(
 
     Scaffold(
         topBar = {
-           TopAppBar(
-               title = { Text(
-               text = titleState.value,
-                fontWeight = FontWeight.Bold,
-               )},
-               navigationIcon = {
-                   if(isBackEnabled.value){
-                       IconButton(onClick = { navController.navigateUp() }) {
-                           Icon(
-                               imageVector = Icons.Default.ArrowBackIosNew,
-                               contentDescription = "Back"
-                           )
-                       }
-                   }
+            TopAppBar(
+                title = {
+                    Text(
+                        text = titleState.value,
+                        fontWeight = FontWeight.Bold,
+                    )
+                },
+                navigationIcon = {
+                    if (isBackEnabled.value) {
+                        IconButton(onClick = { navController.navigateUp() }) {
+                            Icon(
+                                imageVector = Icons.Default.ArrowBackIosNew,
+                                contentDescription = "Back"
+                            )
+                        }
+                    }
 
-               },
-               colors = TopAppBarDefaults.smallTopAppBarColors(
-                   containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(3.dp)
+                },
+                colors = TopAppBarDefaults.smallTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(3.dp)
 
-               )
+                )
 
-           )
+            )
 
         },
         bottomBar = {
@@ -92,26 +94,25 @@ fun LazyApp(
         },
         modifier = Modifier.background(color = Color.Red)
 
-    ) {
-        contentPadding ->
+    ) { contentPadding ->
         NavHost(
             navController = navController,
             startDestination = Screen.Home.route,
             modifier = modifier.padding(contentPadding)
         ) {
-            composable(Screen.Home.route){
+            composable(Screen.Home.route) {
                 setTitle("Home")
                 HomeScreen(navController)
                 isBackEnabled.value = false
             }
-            composable(Screen.Explore.route){
+            composable(Screen.Explore.route) {
                 setTitle("Product")
                 ExploreScreen(navController)
                 isBackEnabled.value = false
 
             }
 
-            composable(Screen.About.route){
+            composable(Screen.About.route) {
                 setTitle("About Me")
                 AboutScreen()
                 isBackEnabled.value = false
@@ -119,8 +120,8 @@ fun LazyApp(
 
             composable(
                 Screen.DetailBrand.route + "/{brandId}",
-                arguments = listOf(navArgument("brandId"){type = NavType.IntType})
-            ){ navBackStackEntry ->
+                arguments = listOf(navArgument("brandId") { type = NavType.IntType })
+            ) { navBackStackEntry ->
                 DetailBrandScreen(
                     navController = navController,
                     brandsId = navBackStackEntry.arguments?.getInt("brandId"),
@@ -132,12 +133,11 @@ fun LazyApp(
 
             composable(
                 Screen.DetailStore.route + "/{storeId}",
-                arguments = listOf(navArgument("storeId"){type = NavType.IntType})
-            ){navBackStackEntry ->
+                arguments = listOf(navArgument("storeId") { type = NavType.IntType })
+            ) { navBackStackEntry ->
                 DetailStoreScreen(
                     navController = navController,
                     storesId = navBackStackEntry.arguments?.getInt("storeId")
-                    //storeid = navBackStackEntry.arguments?.getInt("storeId")
                 )
                 setTitle("Detail Store")
                 setBackIcon(Icons.Default.ArrowBackIosNew)
@@ -190,11 +190,11 @@ private fun BottomBar(
 
         )
         navigationItems.map { item ->
-            NavigationBarItem (
+            NavigationBarItem(
                 selected = currentRoute == item.screen.route,
                 onClick = {
-                    navController.navigate(item.screen.route){
-                        popUpTo(navController.graph.findStartDestination().id){
+                    navController.navigate(item.screen.route) {
+                        popUpTo(navController.graph.findStartDestination().id) {
                             saveState = true
                         }
                         restoreState = true
