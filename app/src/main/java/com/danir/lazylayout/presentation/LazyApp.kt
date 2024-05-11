@@ -1,10 +1,8 @@
 package com.danir.lazylayout.presentation
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
@@ -12,21 +10,25 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -47,6 +49,13 @@ fun LazyApp(
 
 ) {
     val titleState = remember { mutableStateOf("MonitorMania App") }
+    val isBackEnabled = remember {
+        mutableStateOf(false)
+    }
+
+    fun setBackIcon(icon: ImageVector){
+        isBackEnabled.value = true
+    }
 
     fun setTitle(title: String) {
         titleState.value = title
@@ -60,13 +69,20 @@ fun LazyApp(
                 fontWeight = FontWeight.Bold,
                )},
                navigationIcon = {
-                   IconButton(onClick = { navController.navigateUp() }) {
-                       Icon(
-                           imageVector = Icons.Default.ArrowBackIosNew,
-                           contentDescription = "Back"
-                       )
+                   if(isBackEnabled.value){
+                       IconButton(onClick = { navController.navigateUp() }) {
+                           Icon(
+                               imageVector = Icons.Default.ArrowBackIosNew,
+                               contentDescription = "Back"
+                           )
+                       }
                    }
-               }
+
+               },
+               colors = TopAppBarDefaults.smallTopAppBarColors(
+                   containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(3.dp)
+
+               )
 
            )
 
@@ -86,15 +102,19 @@ fun LazyApp(
             composable(Screen.Home.route){
                 setTitle("Home")
                 HomeScreen(navController)
+                isBackEnabled.value = false
             }
             composable(Screen.Explore.route){
                 setTitle("Product")
                 ExploreScreen(navController)
+                isBackEnabled.value = false
+
             }
 
             composable(Screen.About.route){
                 setTitle("About Me")
                 AboutScreen()
+                isBackEnabled.value = false
             }
 
             composable(
@@ -106,6 +126,8 @@ fun LazyApp(
                     brandsId = navBackStackEntry.arguments?.getInt("brandId"),
                 )
                 setTitle("Detail Brand")
+                setBackIcon(Icons.Default.ArrowBackIosNew)
+
             }
 
             composable(
@@ -118,6 +140,7 @@ fun LazyApp(
                     //storeid = navBackStackEntry.arguments?.getInt("storeId")
                 )
                 setTitle("Detail Store")
+                setBackIcon(Icons.Default.ArrowBackIosNew)
             }
 
             composable(
@@ -129,6 +152,7 @@ fun LazyApp(
                     productId = navBackStackEntry.arguments?.getInt("productId")
                 )
                 setTitle("Detail Product")
+                setBackIcon(Icons.Default.ArrowBackIosNew)
             }
 
         }
