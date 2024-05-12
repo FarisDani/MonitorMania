@@ -132,7 +132,7 @@ object DummyData {
         Store(
             id = 2,
             name = "Makmur Indah",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop9,
             location = "Jakarta Timur",
             status = "Nonaktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -144,7 +144,7 @@ object DummyData {
         Store(
             id = 3,
             name = "Musang Queen",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop3,
             location = "Kalimantan Utara",
             status = "Aktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -156,7 +156,7 @@ object DummyData {
         Store(
             id = 4,
             name = "Boyo Eling",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop11,
             location = "Jawa Tengah",
             status = "Aktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -168,7 +168,7 @@ object DummyData {
         Store(
             id = 5,
             name = "Gold King Sejahtra",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop12,
             location = "Banten",
             status = "Aktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -180,7 +180,7 @@ object DummyData {
         Store(
             id = 6,
             name = "Cerah Nusa",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop6,
             location = "Sumatra Barat",
             status = "Nonaktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -192,7 +192,7 @@ object DummyData {
         Store(
             id = 7,
             name = "Jogjagadget",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop7,
             location = "D I Yogyakarta",
             status = "Aktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -204,7 +204,7 @@ object DummyData {
         Store(
             id = 8,
             name = "Mang Asep Store",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop8,
             location = "Jawa Barat",
             status = "Aktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -216,7 +216,7 @@ object DummyData {
         Store(
             id = 9,
             name = "Arctronic",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop9,
             location = "Aceh",
             status = "Aktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +
@@ -228,7 +228,7 @@ object DummyData {
         Store(
             id = 10,
             name = "GadgetPro",
-            photo = R.drawable.sinarjaya,
+            photo = R.drawable.olshop10,
             location = "Jakarta Timur",
             status = "Nonaktif",
             description = "Kami sangat peduli terhadap kepuasan pelanggan, itulah mengapa kami berkomitmen untuk menyediakan layanan pelanggan yang luar biasa. Tim kami siap membantu Anda dengan pertanyaan, masukan, atau bantuan apa pun yang Anda butuhkan selama proses pembelian.\n" +

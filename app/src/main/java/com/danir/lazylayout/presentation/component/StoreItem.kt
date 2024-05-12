@@ -45,9 +45,10 @@ fun StoreItem(
                 .clip(RoundedCornerShape(8.dp))
                 .width(329.dp)
                 .height(91.dp)
-                .background(color = Color(0xFFFFFFFF), shape = RoundedCornerShape(size = 8.dp))
+                .background(color = Color(0xFFF7F7F7), shape = RoundedCornerShape(size = 8.dp))
                 .padding(start = 8.dp, top = 8.dp, end = 8.dp, bottom = 8.dp)
                 .clickable { onItemClicked(store.id) }
+
         ) {
             Image(painter = painterResource(
                 id = store.photo),

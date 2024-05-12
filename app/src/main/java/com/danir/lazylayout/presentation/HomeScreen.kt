@@ -69,7 +69,6 @@ fun HomeScreen(
             StoreItem(
                 store = it,
                 modifier = Modifier
-                    .background(color = Color(0xFFECECEC))
             ) { storeId ->
                 navController.navigate(Screen.DetailStore.route + "/$storeId")
             }
