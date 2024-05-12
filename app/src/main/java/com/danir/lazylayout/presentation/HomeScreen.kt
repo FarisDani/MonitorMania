@@ -39,6 +39,19 @@ fun HomeScreen(
 
     ) {
         item {
+            Box(modifier = Modifier) {
+                Text(
+                    text = "Brands",
+                    modifier = Modifier
+                        .padding(start = 8.dp, top = 8.dp, end = 16.dp, bottom = 16.dp),
+                    style = TextStyle(
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                )
+            }
+        }
+        item {
             LazyRow(
                 contentPadding = PaddingValues(16.dp),
                 horizontalArrangement = Arrangement.spacedBy(0.dp),
