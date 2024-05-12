@@ -37,13 +37,13 @@ fun AbouiItem(
             .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 16.dp)
     ) {
         Image(
-            painter = painterResource(id = R.drawable.au),
+            painter = painterResource(id = R.drawable.faris),
             contentDescription = "danir",
             contentScale = ContentScale.FillBounds,
 
             modifier = Modifier
-                .width(101.dp)
-                .height(100.dp)
+                .width(60.dp)
+                .height(60.dp)
                 .clip(CircleShape)
         )
         Text(
